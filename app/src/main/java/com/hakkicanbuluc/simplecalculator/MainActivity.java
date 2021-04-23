@@ -24,17 +24,67 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sum(View view) {
-        int number = Integer.parseInt(numberText.getText().toString());
-        int number1 = Integer.parseInt(numberText1.getText().toString());
+        String numberStr = numberText.getText().toString();
+        String number1Str = numberText1.getText().toString();
 
-        int result = number + number1;
+        if (numberStr.matches("") || number1Str.matches("")) {
+            resultText.setText("Enter Number!");
+        } else {
+            int number = Integer.parseInt(numberStr);
+            int number1 = Integer.parseInt(number1Str);
 
-        resultText.setText("Result: " + result);
+            int result = number + number1;
+
+            resultText.setText("Result: " + result);
+        }
+
     }
 
-    public void deduct(View view) {}
+    public void deduct(View view) {
+        String numberStr = numberText.getText().toString();
+        String number1Str = numberText1.getText().toString();
 
-    public void multiply(View view) {}
+        if (numberStr.matches("") || number1Str.matches("")) {
+            resultText.setText("Enter Number!");
+        } else {
+            int number = Integer.parseInt(numberStr);
+            int number1 = Integer.parseInt(number1Str);
 
-    public void divide(View view) {}
+            int result = number - number1;
+
+            resultText.setText("Result: " + result);
+        }
+    }
+
+    public void multiply(View view) {
+        String numberStr = numberText.getText().toString();
+        String number1Str = numberText1.getText().toString();
+
+        if (numberStr.matches("") || number1Str.matches("")) {
+            resultText.setText("Enter Number!");
+        } else {
+            int number = Integer.parseInt(numberStr);
+            int number1 = Integer.parseInt(number1Str);
+
+            int result = number * number1;
+
+            resultText.setText("Result: " + result);
+        }
+    }
+
+    public void divide(View view) {
+        String numberStr = numberText.getText().toString();
+        String number1Str = numberText1.getText().toString();
+
+        if (numberStr.matches("") || number1Str.matches("")) {
+            resultText.setText("Enter Number!");
+        } else {
+            int number = Integer.parseInt(numberStr);
+            int number1 = Integer.parseInt(number1Str);
+
+            int result = number / number1;
+
+            resultText.setText("Result: " + result);
+        }
+    }
 }
